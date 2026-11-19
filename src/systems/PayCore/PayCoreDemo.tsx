@@ -85,7 +85,7 @@ function LedgerSim() {
 
       <div className="pc__grid">
         <section className="pc__box" aria-label="Ledger postings">
-          <div className="pc__boxhead"><span>ledger_entries</span><span className={tb.balanced ? 'ok' : 'signal'}>{tb.balanced ? `✓ balanced · DR ${tb.debits} = CR ${tb.credits}` : 'UNBALANCED'}</span></div>
+          <div className="pc__boxhead"><span>ledger_entries</span><span className={tb.balanced ? 'ok' : 'bad'}>{tb.balanced ? `✓ balanced · DR ${tb.debits} = CR ${tb.credits}` : 'UNBALANCED'}</span></div>
           <div className="scroll-x pc__scroll">
             <table className="tbl">
               <thead><tr><th>txn</th><th>account</th><th className="num">debit</th><th className="num">credit</th></tr></thead>
@@ -129,7 +129,7 @@ function LedgerSim() {
             {log.map((l) => (
               <li key={l.id}>
                 <span className="dim">{l.req}</span>
-                <span className={l.res.status === 201 ? 'ok' : 'signal'}>{l.res.status} {l.res.body}{l.res.replayed ? '  ← replayed from idempotency store, no new postings' : ''}</span>
+                <span className={l.res.status === 201 ? 'ok' : 'bad'}>{l.res.status} {l.res.body}{l.res.replayed ? '  ← replayed from idempotency store, no new postings' : ''}</span>
               </li>
             ))}
           </ol>

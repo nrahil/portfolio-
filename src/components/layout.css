@@ -44,9 +44,10 @@
 .card__links a:hover { background: var(--ink-3); color: var(--signal); }
 .card__links a span { color: var(--bone-faint); transition: transform var(--dur-2) var(--ease-out); }
 .card__links a:hover span { color: var(--signal); transform: translate(2px, -2px); }
-.card__links a.card__resume { grid-column: 1 / -1; background: var(--signal); color: var(--signal-ink); font-weight: 600; }
-.card__links a.card__resume span { color: var(--signal-ink); }
-.card__links a.card__resume:hover { background: var(--bone); color: var(--ink); }
+.card__links a.card__resume { grid-column: 1 / -1; background: var(--signal-fill); color: var(--signal-fill-ink); font-weight: 600; }
+.card__links a.card__resume span { color: var(--signal-fill-ink); }
+.card__links a.card__resume:hover { background: var(--signal); color: var(--signal-ink); }
+.card__links a.card__resume:hover span { color: var(--signal-ink); }
 .card__term { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; padding: 10px 12px; border: 1px dashed var(--line-strong); background: transparent; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--bone-dim); cursor: pointer; text-align: left; transition: border-color var(--dur-1), color var(--dur-1); }
 .card__term:hover { border-color: var(--signal); color: var(--bone); }
 .card__term b { color: var(--signal); font-weight: 500; }
@@ -64,9 +65,9 @@
 .rail__item.is-active .rail__label, .rail__item:hover .rail__label { color: var(--bone); }
 .rail__track { position: relative; display: block; height: 8px; background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 25%); }
 .rail__span { position: absolute; top: 0; bottom: 0; background: var(--ink-3); outline: 1px solid var(--line-strong); }
-.rail__fill { position: absolute; inset: 0; background: var(--bone-faint); transform-origin: left; }
-.rail__item.is-active .rail__fill { background: var(--signal); }
-.rail__item.is-done .rail__fill { background: var(--bone-dim); }
+.rail__fill { position: absolute; inset: 0; background: var(--line-strong); transform-origin: left; }
+.rail__item.is-active .rail__fill { background: var(--signal-fill); outline: 1px solid var(--signal); }
+.rail__item.is-done .rail__fill { background: var(--line-strong); }
 .rail__item:hover .rail__span { outline-color: var(--bone-dim); }
 .rail__tip { position: absolute; right: calc(100% + 18px); top: 8px; white-space: nowrap; padding: 4px 8px; background: var(--bone); color: var(--ink); opacity: 0; transform: translateX(6px); pointer-events: none; transition: opacity var(--dur-1), transform var(--dur-1); }
 .rail__item:hover .rail__tip, .rail__item:focus-visible .rail__tip { opacity: 1; transform: none; }

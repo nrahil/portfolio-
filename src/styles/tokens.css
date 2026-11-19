@@ -1,20 +1,28 @@
-/* Design tokens - one major (ink/bone), one minor (signal), two functional accents. Flat colours only. */
+/* Design tokens. Default theme: cream paper + charcoal ink, pale blue as the accent.
+   --signal-fill is the pale blue used for solid fills (buttons, selections, highlights);
+   --signal is the same hue, deepened so it stays readable as text and thin lines.
+   --ok / --warn / --bad appear only as state colours inside the demos. Flat colours only. */
 :root {
-  --ink: #0e0f0d;
-  --ink-2: #151714;
-  --ink-3: #1c1f1b;
-  --line: #2a2d28;
-  --line-strong: #3a3e37;
-  --bone: #ece7dc;
-  --bone-dim: #a39f94;
-  --bone-faint: #847f75;
-  --signal: #ff5b1f;
-  --signal-ink: #0e0f0d; /* text on signal */
-  --signal-soft: rgba(255, 91, 31, 0.12);
-  --ok: #8fd3a9;
-  --ok-soft: rgba(143, 211, 169, 0.12);
-  --warn: #e8c468;
-  --warn-soft: rgba(232, 196, 104, 0.12);
+  --ink: #f5f0e6;
+  --ink-2: #eee7d9;
+  --ink-3: #e6decd;
+  --line: #dcd3c1;
+  --line-strong: #c4b9a3;
+  --bone: #1f2328;
+  --bone-dim: #4e4b45;
+  --bone-faint: #6b675e;
+  --signal: #3b6a99;
+  --signal-ink: #f5f0e6; /* text on --signal */
+  --signal-soft: rgba(59, 106, 153, 0.1);
+  --signal-fill: #b9d3ee;
+  --signal-fill-ink: #1f2328; /* text on --signal-fill */
+  --ok: #2f7a50;
+  --ok-soft: rgba(47, 122, 80, 0.1);
+  --warn: #8f660b;
+  --warn-soft: rgba(143, 102, 11, 0.1);
+  --bad: #a8452f;
+  --bad-soft: rgba(168, 69, 47, 0.1);
+  --scrim: rgba(31, 35, 40, 0.28);
 
   --font-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
   --font-body: 'Inter Tight Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -36,24 +44,39 @@
 
   --card-w: clamp(280px, 26vw, 360px);
   --rail-w: 176px;
+  color-scheme: light;
+}
+
+/* Dark theme (terminal: `theme dark`): the original ink black + signal orange. */
+:root[data-theme='dark'] {
+  --ink: #0e0f0d;
+  --ink-2: #151714;
+  --ink-3: #1c1f1b;
+  --line: #2a2d28;
+  --line-strong: #3a3e37;
+  --bone: #ece7dc;
+  --bone-dim: #a39f94;
+  --bone-faint: #847f75;
+  --signal: #ff5b1f;
+  --signal-ink: #0e0f0d;
+  --signal-soft: rgba(255, 91, 31, 0.12);
+  --signal-fill: #ff5b1f;
+  --signal-fill-ink: #0e0f0d;
+  --ok: #8fd3a9;
+  --ok-soft: rgba(143, 211, 169, 0.12);
+  --warn: #e8c468;
+  --warn-soft: rgba(232, 196, 104, 0.12);
+  --bad: #ff5b1f;
+  --bad-soft: rgba(255, 91, 31, 0.12);
+  --scrim: rgba(14, 15, 13, 0.6);
   color-scheme: dark;
 }
 
-:root[data-theme='light'] {
-  --ink: #ece7dc;
-  --ink-2: #e3ddd0;
-  --ink-3: #d9d2c3;
-  --line: #c9c1b0;
-  --line-strong: #b0a793;
-  --bone: #151714;
-  --bone-dim: #5f5b52;
-  --bone-faint: #6c685f;
-  --signal: #b83a08;
-  --signal-ink: #ece7dc;
-  --signal-soft: rgba(184, 58, 8, 0.1);
-  --ok: #2f7d52;
-  --ok-soft: rgba(47, 125, 82, 0.1);
-  --warn: #98700f;
-  --warn-soft: rgba(152, 112, 15, 0.1);
-  color-scheme: light;
-}
+/* In dark mode fill and line are the same orange, so restore the original hover/active treatments. */
+:root[data-theme='dark'] .btn--signal:hover,
+:root[data-theme='dark'] .card__links a.card__resume:hover { background: var(--bone); border-color: var(--bone); color: var(--ink); }
+:root[data-theme='dark'] .card__links a.card__resume:hover span { color: var(--ink); }
+:root[data-theme='dark'] .flow__stage.is-hot { background: var(--signal-soft); }
+:root[data-theme='dark'] .flow__stage.is-hot b { color: var(--signal); }
+:root[data-theme='dark'] .pc__op.is-sel { background: var(--bone); color: var(--ink); }
+:root[data-theme='dark'] .rail__item.is-active .rail__fill { outline: 0; }

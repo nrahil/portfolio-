@@ -21,7 +21,7 @@ export function scrollToSection(id: string) {
 
 export type Theme = 'dark' | 'light'
 export function getTheme(): Theme {
-  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
+  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
 }
 export function setTheme(t: Theme) {
   withTransition(() => {

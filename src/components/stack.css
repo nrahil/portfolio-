@@ -7,8 +7,8 @@
 .stk__skill sup { margin-left: 4px; font-family: var(--font-mono); font-size: 0.62rem; color: var(--bone-faint); }
 .stk__skill.is-tool { border-style: dashed; color: var(--bone-dim); }
 .stk__skill:hover { border-color: var(--bone-dim); }
-.stk__skill.is-sel { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
-.stk__skill.is-sel sup { color: var(--signal-ink); }
+.stk__skill.is-sel { background: var(--signal-fill); border-color: var(--signal-fill); color: var(--signal-fill-ink); }
+.stk__skill.is-sel sup { color: var(--signal-fill-ink); }
 .stk__resolve { position: sticky; top: 24px; }
 .stk__tree { padding: 14px; font-size: var(--fs-xs); }
 .stk__root { color: var(--signal); margin-bottom: 6px; font-size: var(--fs-sm); }

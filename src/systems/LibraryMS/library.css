@@ -3,7 +3,7 @@
 .lib__group .demo__note { margin-right: 4px; }
 .lib__chip { padding: 4px 10px; border: 1px solid var(--line-strong); background: var(--ink); font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--bone-dim); cursor: pointer; }
 .lib__chip:hover { color: var(--bone); }
-.lib__chip.is-sel { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.lib__chip.is-sel { background: var(--signal-fill); border-color: var(--signal-fill); color: var(--signal-fill-ink); }
 .lib__wrap { overflow-x: auto; padding: 14px; }
 .lib__svg { width: 100%; min-width: 640px; height: auto; }
 .lib__cls rect { fill: var(--ink); stroke: var(--line-strong); stroke-width: 1.2; transition: fill var(--dur-2), stroke var(--dur-2); }

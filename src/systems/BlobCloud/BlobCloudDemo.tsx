@@ -211,7 +211,7 @@ function Ingest() {
             return <div key={s.t} className={`flow__stage ${cls}`}><b>{s.t}</b><span>{s.d}</span></div>
           })}
         </div>
-        <p className={`mono blob-msg ${msg.startsWith('✗') ? 'signal' : msg.startsWith('✓') ? 'ok' : 'dim'}`} aria-live="polite">{msg}</p>
+        <p className={`mono blob-msg ${msg.startsWith('✗') ? 'bad' : msg.startsWith('✓') ? 'ok' : 'dim'}`} aria-live="polite">{msg}</p>
       </div>
     </div>
   )
@@ -256,7 +256,7 @@ function Aimd() {
           <span className="mono">{loss}%</span>
           <button type="button" className="btn btn--sm" onClick={() => setSeed((s) => s + 1)}>new network</button>
         </div>
-        <p className="demo__note">Simulated network; the controller is the uploader's real rule - one more stream after a clean round, half as many after a failure. Orange dots are failed rounds.</p>
+        <p className="demo__note">Simulated network; the controller is the uploader's real rule - one more stream after a clean round, half as many after a failure. Red dots are failed rounds.</p>
       </div>
     </div>
   )

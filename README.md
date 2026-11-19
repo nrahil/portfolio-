@@ -19,7 +19,7 @@ Deploy: `vercel.json` rewrites every route to `index.html`, so `/systems/<slug>`
   - `PayCore/ledger.ts` - idempotent double-entry ledger → outbox → relay → ordered projection + DLQ
   - `ShopLon/`, `Ada/`, `LibraryMS/` - stream lifecycle, research graph, pattern map
 - `src/terminal/` - the command parser (`parser.ts`) and the terminal UI. Open it with `` ` `` or Ctrl/⌘+K.
-- `src/styles/tokens.css` - palette (ink/bone major, signal-orange minor, mint/amber state accents) and type scale.
+- `src/styles/tokens.css` - palette (cream + charcoal major, pale-blue minor, green/amber/brick state accents; optional dark theme) and type scale.
 
 ## To update
 - ShopLon and the Library Management System link to the GitHub profile. Put their repo URLs in `profile.ts` (`github:`).

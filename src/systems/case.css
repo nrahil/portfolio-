@@ -45,10 +45,10 @@
 .flow__stage:last-child { border-right: 0; }
 .flow__stage b { display: block; font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 600; color: var(--bone); margin-bottom: 2px; }
 .flow__stage span { color: var(--bone-faint); }
-.flow__stage.is-hot { background: var(--signal-soft); }
-.flow__stage.is-hot b { color: var(--signal); }
+.flow__stage.is-hot { background: var(--signal-fill); }
+.flow__stage.is-hot b { color: var(--signal-fill-ink); }
 .flow__stage.is-ok { background: var(--ok-soft); }
-.flow__stage.is-bad { background: var(--signal); }
+.flow__stage.is-bad { background: var(--bad); }
 .flow__stage.is-bad b, .flow__stage.is-bad span { color: var(--signal-ink); }
 .tbl { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.74rem; }
 .tbl th { text-align: left; font-weight: 500; color: var(--bone-faint); padding: 6px 10px; border-bottom: 1px solid var(--line); }

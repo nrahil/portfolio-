@@ -5,7 +5,7 @@
 .tl__bar { position: absolute; top: 0; height: 100%; display: flex; align-items: center; padding: 0 8px; background: var(--ink-3); border: 1px solid var(--line-strong); color: var(--bone-dim); overflow: hidden; white-space: nowrap; transition: background var(--dur-2), color var(--dur-2), border-color var(--dur-2); }
 .tl__bar em { font-style: normal; overflow: hidden; text-overflow: ellipsis; }
 .tl__lane--edu .tl__bar { background: transparent; border-style: dashed; }
-.tl__bar.is-lit { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.tl__bar.is-lit { background: var(--signal-fill); border-color: var(--signal-fill); color: var(--signal-fill-ink); }
 .tl__now { position: absolute; top: 14px; bottom: -6px; width: 0; border-left: 1px solid var(--signal); }
 .tl__now b { position: absolute; top: -14px; left: -14px; font-weight: 500; color: var(--signal); }
 
