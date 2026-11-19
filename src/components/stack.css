@@ -1,0 +1,25 @@
+.stk { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: var(--s6); align-items: start; }
+.stk__layers { border-top: 1px solid var(--line); }
+.stk__layer { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: var(--s4); padding: 14px 0; border-bottom: 1px solid var(--line); }
+.stk__lname { font-size: var(--fs-xs); color: var(--bone-dim); padding-top: 6px; }
+.stk__skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.stk__skill { position: relative; padding: 5px 10px; border: 1px solid var(--line-strong); background: var(--ink); font-size: var(--fs-sm); cursor: pointer; transition: border-color var(--dur-1), background var(--dur-1), color var(--dur-1); }
+.stk__skill sup { margin-left: 4px; font-family: var(--font-mono); font-size: 0.62rem; color: var(--bone-faint); }
+.stk__skill.is-tool { border-style: dashed; color: var(--bone-dim); }
+.stk__skill:hover { border-color: var(--bone-dim); }
+.stk__skill.is-sel { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.stk__skill.is-sel sup { color: var(--signal-ink); }
+.stk__resolve { position: sticky; top: 24px; }
+.stk__tree { padding: 14px; font-size: var(--fs-xs); }
+.stk__root { color: var(--signal); margin-bottom: 6px; font-size: var(--fs-sm); }
+.stk__dep { display: grid; grid-template-columns: 32px 1fr auto; gap: 6px; width: 100%; padding: 3px 0; border: 0; background: none; text-align: left; color: var(--bone-faint); cursor: default; transition: color var(--dur-2); }
+.stk__dep.is-hit { color: var(--bone); cursor: pointer; }
+.stk__dep.is-hit:hover { color: var(--signal); }
+.stk__dep:disabled { opacity: 0.45; }
+.stk__branch { color: var(--bone-faint); white-space: pre; }
+.stk__dep.is-hit .stk__branch { color: var(--signal); }
+.stk__kind { color: var(--bone-faint); }
+.stk__none { margin-top: 6px; color: var(--bone-dim); }
+
+@media (max-width: 1100px) { .stk { grid-template-columns: 1fr; } .stk__resolve { position: static; } }
+@media (max-width: 640px) { .stk__layer { grid-template-columns: 1fr; gap: 8px; } .stk__lname { padding-top: 0; } }

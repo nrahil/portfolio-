@@ -1,0 +1,62 @@
+.sys-list { border-top: 1px solid var(--line); }
+.sys { border-bottom: 1px solid var(--line); }
+.sys__link {
+  position: relative; display: grid;
+  grid-template-columns: 44px minmax(0, 1.2fr) minmax(0, 1fr) 160px;
+  grid-template-areas: 'idx main main glyph' 'idx line metric glyph';
+  gap: var(--s4) var(--s6); align-items: start;
+  padding: var(--s6) var(--s4);
+  transition: background var(--dur-2);
+  overflow: hidden;
+}
+.sys__link::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--signal); transform: scaleY(0); transform-origin: top; transition: transform var(--dur-2) var(--ease-out); }
+.sys__link:hover, .sys__link:focus-visible { background: var(--ink-2); }
+.sys__link:hover::before, .sys__link:focus-visible::before { transform: scaleY(1); }
+.sys__idx { grid-area: idx; font-size: var(--fs-sm); color: var(--signal); padding-top: 6px; }
+.sys__main { grid-area: main; display: flex; flex-direction: column; gap: 10px; }
+.sys__name { font-size: clamp(1.8rem, 1rem + 2.4vw, 3.4rem); hyphens: none; transition: color var(--dur-2); }
+.sys__link:hover .sys__name { color: var(--signal); }
+.sys__kind { font-size: var(--fs-xs); color: var(--bone-dim); }
+.sys__line { grid-area: line; color: var(--bone); font-size: var(--fs-lg); line-height: 1.45; max-width: 44ch; }
+.sys__metric { grid-area: metric; display: flex; flex-direction: column; gap: 4px; padding-left: var(--s4); border-left: 1px solid var(--line); font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--bone-dim); }
+.sys__metric b { color: var(--ok); font-weight: 600; font-size: var(--fs-xl); line-height: 1.1; white-space: nowrap; }
+.sys__glyph { grid-area: glyph; align-self: center; }
+.sys__go { position: absolute; right: var(--s4); bottom: 12px; font-size: var(--fs-xs); color: var(--signal); opacity: 0; transform: translateY(4px); transition: opacity var(--dur-2), transform var(--dur-2); }
+.sys__link:hover .sys__go, .sys__link:focus-visible .sys__go { opacity: 1; transform: none; }
+
+.sys-list--secondary .sys__link { padding-top: var(--s5); padding-bottom: var(--s5); }
+.sys-list--secondary .sys__name { font-size: clamp(1.4rem, 1rem + 1.4vw, 2.2rem); }
+.sys-sub { display: flex; align-items: center; gap: 12px; margin: var(--s7) 0 var(--s4); font-size: var(--fs-xs); color: var(--bone-dim); }
+
+/* Glyphs */
+.glyph { width: 160px; height: 64px; overflow: visible; }
+.glyph .g-line { fill: none; stroke: var(--bone-faint); stroke-width: 1.2; }
+.glyph .g-new { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+.glyph .g-dedup { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 1.2; }
+.glyph .g-node { fill: var(--ink); stroke: var(--bone-dim); stroke-width: 1.2; }
+.glyph .g-txt { font-family: var(--font-mono); font-size: 8px; fill: var(--bone-faint); }
+.glyph .g-loop { fill: none; stroke: var(--signal); stroke-width: 1.2; stroke-dasharray: 3 3; }
+.glyph .g-stream { fill: none; stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.glyph--blob rect { transition: transform var(--dur-3) var(--ease-out); transition-delay: calc(var(--i) * 40ms); }
+.sys__link:hover .glyph--blob rect { transform: translateY(-4px); }
+.sys__link:hover .glyph--blob rect:nth-child(odd) { transform: translateY(4px); }
+.glyph--pay .g-leg { transform-box: fill-box; transform-origin: left; transition: transform var(--dur-3) var(--ease-out); }
+.sys__link:hover .glyph--pay .g-leg { animation: legs 1.2s var(--ease-in-out) infinite alternate; }
+.sys__link:hover .glyph--pay .g-leg + .g-leg { animation-delay: 0.15s; }
+@keyframes legs { from { transform: scaleX(0.35); } to { transform: scaleX(1); } }
+.sys__link:hover .glyph--shop .g-stream { animation: flow 0.8s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -22; } }
+.glyph--ada .g-node { transition: fill var(--dur-2); transition-delay: calc(var(--i) * 90ms); }
+.sys__link:hover .glyph--ada .g-node { fill: var(--signal); stroke: var(--signal); }
+.sys__link:hover .glyph--lib .g-new { fill: var(--signal-soft); }
+
+@media (max-width: 1280px) {
+  .sys__link { grid-template-columns: 36px minmax(0, 1fr) 140px; grid-template-areas: 'idx main glyph' 'idx line line' 'idx metric metric'; }
+  .sys__metric { border-left: 0; padding-left: 0; }
+  .glyph { width: 140px; }
+}
+@media (max-width: 640px) {
+  .sys__link { grid-template-columns: 28px minmax(0, 1fr); grid-template-areas: 'idx main' 'idx line' 'idx glyph' 'idx metric'; padding: var(--s5) 0; gap: 10px 12px; }
+  .sys__go { opacity: 1; transform: none; position: static; grid-column: 2; }
+  .sys__metric { flex-wrap: wrap; }
+}

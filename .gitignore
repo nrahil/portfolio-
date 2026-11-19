@@ -1,0 +1,10 @@
+node_modules
+dist
+*.local
+*.tsbuildinfo
+
+# Original source material (the site uses the copies in public/)
+OResume (2).pdf
+Rahil_java.pdf
+main.md
+rahil_pass_photo.jpeg

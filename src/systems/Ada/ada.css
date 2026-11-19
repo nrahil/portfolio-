@@ -1,0 +1,30 @@
+.ada__wrap { overflow-x: auto; padding: 8px 10px 0; }
+.ada { width: 100%; min-width: 640px; height: auto; }
+.ada__edge { stroke: var(--line-strong); stroke-width: 1.3; transition: stroke var(--dur-2); }
+.ada__edge.is-on { stroke: var(--signal); stroke-width: 2; }
+.ada__tap { stroke: var(--line); stroke-dasharray: 2 4; }
+.ada__bus { fill: var(--ink-2); stroke: var(--line-strong); }
+.ada__bus--trace { fill: transparent; stroke-dasharray: 3 3; }
+.ada__bustxt { font-family: var(--font-mono); font-size: 10.5px; fill: var(--bone-dim); }
+.ada__loop { fill: none; stroke: var(--line-strong); stroke-dasharray: 4 4; stroke-width: 1.3; transition: stroke var(--dur-2); }
+.ada__loop.is-on { stroke: var(--warn); stroke-width: 2; }
+.ada__looptxt { font-family: var(--font-mono); font-size: 10px; fill: var(--bone-faint); }
+.ada__node { cursor: pointer; outline: none; }
+.ada__node circle { fill: var(--ink); stroke: var(--bone-dim); stroke-width: 1.5; transition: fill var(--dur-2), stroke var(--dur-2); }
+.ada__node text { font-family: var(--font-mono); font-size: 11px; fill: var(--bone-dim); }
+.ada__node.is-seen circle { stroke: var(--ok); }
+.ada__node.is-on circle { fill: var(--signal); stroke: var(--signal); }
+.ada__node.is-on text, .ada__node.is-sel text { fill: var(--bone); }
+.ada__node.is-sel circle { stroke-width: 3; }
+.ada__node:focus-visible circle { stroke: var(--signal); stroke-dasharray: 3 2; }
+.ada__info { display: grid; gap: 6px; padding: 12px 14px 14px; border-top: 1px solid var(--line); }
+.ada__say { font-size: var(--fs-xs); min-height: 1.6em; }
+.ada__info b { color: var(--signal); font-weight: 500; }
+.ada__eval { display: grid; gap: 14px; padding: 14px; }
+.ada__erow { display: grid; grid-template-columns: 200px 1fr; gap: 12px; align-items: center; }
+.ada__bars { display: grid; gap: 4px; }
+.ada__bar { position: relative; height: 22px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-family: var(--font-mono); font-size: 0.72rem; transform-origin: left; animation: barIn 900ms var(--ease-out) both; }
+.ada__bar--a { background: var(--ink-3); color: var(--bone-dim); }
+.ada__bar--b { background: var(--ok); color: var(--ink); animation-delay: 200ms; }
+@keyframes barIn { from { transform: scaleX(0); } }
+@media (max-width: 640px) { .ada__erow { grid-template-columns: 1fr; } }

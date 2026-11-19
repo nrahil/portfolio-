@@ -1,0 +1,20 @@
+.lib__chips { display: flex; flex-wrap: wrap; gap: 14px 24px; padding: 14px; border-bottom: 1px solid var(--line); }
+.lib__group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.lib__group .demo__note { margin-right: 4px; }
+.lib__chip { padding: 4px 10px; border: 1px solid var(--line-strong); background: var(--ink); font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--bone-dim); cursor: pointer; }
+.lib__chip:hover { color: var(--bone); }
+.lib__chip.is-sel { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.lib__wrap { overflow-x: auto; padding: 14px; }
+.lib__svg { width: 100%; min-width: 640px; height: auto; }
+.lib__cls rect { fill: var(--ink); stroke: var(--line-strong); stroke-width: 1.2; transition: fill var(--dur-2), stroke var(--dur-2); }
+.lib__cls.is-on rect { fill: var(--signal-soft); stroke: var(--signal); stroke-width: 1.6; }
+.lib__st { font-family: var(--font-mono); font-size: 9px; fill: var(--bone-faint); }
+.lib__nm { font-family: var(--font-mono); font-size: 12px; fill: var(--bone-dim); }
+.lib__cls.is-on .lib__nm { fill: var(--bone); }
+.lib__cls.is-on .lib__st { fill: var(--signal); }
+.lib__link { fill: none; stroke: var(--line-strong); stroke-width: 1.2; transition: stroke var(--dur-2); }
+.lib__link--use { stroke-dasharray: 4 3; }
+.lib__link.is-on { stroke: var(--signal); }
+.lib__tri { fill: var(--ink); stroke: var(--bone-dim); }
+.lib__why { padding: 12px 14px 14px; border-top: 1px solid var(--line); color: var(--bone-dim); }
+.lib__why b { color: var(--signal); font-weight: 500; }
